@@ -1,0 +1,56 @@
+<section class="skills section-padding" id="skills">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-eyebrow reveal">Technical Skills</p>
+      <h2 class="section-title reveal">My <span class="gradient-text">Arsenal</span></h2>
+      <p class="section-subtitle reveal">Constantly expanding, always shipping</p>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="skill-tabs reveal">
+      @for (cat of categories; track cat.label) {
+        <button class="skill-tab" [class.active]="active === cat.label" (click)="setActive(cat.label)">
+          <span class="tab-icon">{{ cat.icon }}</span>
+          <span>{{ cat.label }}</span>
+        </button>
+      }
+    </div>
+
+    <!-- Skills display -->
+    <div class="skills-panel">
+      @for (skill of activeCategory.skills; track skill.name; let i = $index) {
+        <div class="skill-item reveal" [style.transition-delay.ms]="i * 70">
+          <div class="skill-icon-wrap">
+            <span class="skill-emoji">{{ skill.icon }}</span>
+            <div class="skill-icon-ring"></div>
+          </div>
+          <div class="skill-data">
+            <div class="skill-top">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-level gradient-text">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar-fill" [style.--level]="skill.level + '%'">
+                <div class="skill-glow"></div>
+              </div>
+            </div>
+            <span class="skill-tier" [class]="getTier(skill.level)">{{ getTierLabel(skill.level) }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Also familiar with -->
+    <div class="also-wrap reveal">
+      <h3>Also familiar with</h3>
+      <div class="also-grid">
+        @for (t of alsoWith; track t.name) {
+          <div class="also-item">
+            <span class="also-emoji">{{ t.icon }}</span>
+            <span>{{ t.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

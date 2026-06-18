@@ -1,0 +1,190 @@
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-gradient-bar {
+  height: 2px;
+  background: var(--gradient-main);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr;
+  gap: 60px;
+  padding: 64px 0 44px;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr 1fr; gap: 36px; }
+  @media (max-width: 580px) { grid-template-columns: 1fr; gap: 32px; padding: 44px 0 32px; }
+}
+
+.footer-brand {}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--gradient-main);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: #fff;
+    font-family: var(--font-display);
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    span { color: var(--accent-purple); }
+  }
+}
+
+.footer-bio {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  max-width: 300px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.fsocial {
+  width: 38px; height: 38px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary);
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+    background: rgba(167,139,250,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(167,139,250,0.2);
+  }
+}
+
+.footer-nav, .footer-contact-info {
+  h4 {
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-family: var(--font-body);
+  }
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gradient-main);
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: var(--text-primary);
+      &::after { width: 100%; }
+    }
+  }
+}
+
+.fcontact-list { display: flex; flex-direction: column; gap: 12px; }
+
+.fcontact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+
+  svg { color: var(--accent-purple); flex-shrink: 0; }
+
+  &.available {
+    color: #4ade80;
+    gap: 10px;
+
+    .avail-pulse {
+      width: 8px; height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 8px #4ade80;
+      animation: ping 2s ease-out infinite;
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  p {
+    color: var(--text-muted);
+    font-size: 0.84rem;
+  }
+}
+
+.back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+
+  &:hover {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+    background: rgba(167,139,250,0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(167,139,250,0.2);
+  }
+}

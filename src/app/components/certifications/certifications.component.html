@@ -1,0 +1,85 @@
+<section class="certifications section-padding" id="certifications">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-eyebrow reveal">Credentials</p>
+      <h2 class="section-title reveal">Certifications &<br><span class="gradient-text">Achievements</span></h2>
+      <p class="section-subtitle reveal">Proof of commitment to continuous learning across 8 platforms</p>
+    </div>
+
+    <div class="certs-grid">
+      @for (cert of certs; track cert.title; let i = $index) {
+        <div class="cert-card reveal" [style.transition-delay.ms]="i * 80" [style.--accent]="cert.color" [style.--accent-rgb]="cert.colorRgb">
+          <div class="cert-bg-pattern"></div>
+
+          <div class="cert-top">
+            <div class="cert-issuer-logo">{{ cert.logo }}</div>
+            <div class="cert-verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Verified
+            </div>
+          </div>
+
+          <div class="cert-trophy">{{ cert.icon }}</div>
+          <h3 class="cert-title">{{ cert.title }}</h3>
+
+          <div class="cert-meta">
+            <div class="cert-org">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <span>{{ cert.issuer }}</span>
+            </div>
+            <div class="cert-year">{{ cert.date }}</div>
+          </div>
+
+          <div class="cert-divider"></div>
+
+          <div class="cert-skills">
+            @for (skill of cert.skills; track skill) {
+              <span class="cert-skill">{{ skill }}</span>
+            }
+          </div>
+
+          <div class="cert-glow"></div>
+          <div class="cert-shimmer"></div>
+        </div>
+      }
+    </div>
+
+    <!-- Platform badges strip -->
+    <div class="platforms-strip reveal">
+      <p class="strip-label">Certified on</p>
+      <div class="platform-badges">
+        @for (p of platforms; track p.name) {
+          <div class="pbadge">
+            <span class="pbadge-icon">{{ p.icon }}</span>
+            <span class="pbadge-name">{{ p.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Achievement banner -->
+    <div class="achievement-banner reveal">
+      <div class="banner-content">
+        <span class="banner-icon">🎓</span>
+        <div>
+          <p class="banner-title">Always Learning</p>
+          <p class="banner-sub">Actively upskilling in Cloud, AI/ML, DSA and modern web frameworks</p>
+        </div>
+      </div>
+      <div class="banner-progress">
+        <span>8 Certifications earned</span>
+        <div class="progress-dots">
+          <span class="pdot active"></span>
+          <span class="pdot active"></span>
+          <span class="pdot active"></span>
+          <span class="pdot active"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

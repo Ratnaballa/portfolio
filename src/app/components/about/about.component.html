@@ -1,0 +1,89 @@
+<section class="about section-padding" id="about">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-eyebrow reveal">About Me</p>
+      <h2 class="section-title reveal">The person behind<br>the <span class="gradient-text">code</span></h2>
+      <p class="section-subtitle reveal">Passionate about crafting experiences that are not just functional, but memorable.</p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="bento-grid">
+
+      <!-- Bio card — large -->
+      <div class="glass-card bento-card bento-bio reveal-left">
+        <div class="bio-glow"></div>
+        <div class="bio-icon">👩‍💻</div>
+        <h3>Who I Am</h3>
+        <p>
+          I'm <strong>Ratna Kumari Balla</strong>, a passionate B.Tech CSE (AIML) student at
+          <span class="hl">Sasi Institute of Technology and Engineering</span>, Penugonda, Andhra Pradesh.
+          I specialise in building end-to-end web applications — from sleek Angular frontends to Firebase-powered backends.
+        </p>
+        <p>
+          I believe great software is a blend of clean engineering and thoughtful design.
+          Every line I write, every component I build, is aimed at creating experiences users love.
+        </p>
+        <div class="bio-tags">
+          <span>Clean Code</span>
+          <span>UI-Obsessed</span>
+          <span>Fast Learner</span>
+          <span>Team Player</span>
+        </div>
+      </div>
+
+      <!-- CGPA stat card -->
+      <div class="glass-card bento-card bento-cgpa reveal">
+        <div class="cgpa-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50" />
+            <circle class="ring-fill" cx="60" cy="60" r="50" />
+          </svg>
+          <div class="cgpa-center">
+            <span class="cgpa-num gradient-text">8.9</span>
+            <span class="cgpa-label">CGPA</span>
+          </div>
+        </div>
+        <p class="cgpa-sub">Top 10% in class</p>
+      </div>
+
+      <!-- Education card -->
+      <div class="glass-card bento-card bento-edu reveal-right">
+        <div class="edu-badge">🏛️</div>
+        <div class="edu-status">
+          <span class="pulse-dot"></span>
+          4th Year • Graduating 2027
+        </div>
+        <h3>B.Tech CSE</h3>
+        <p class="edu-spec">Artificial Intelligence &<br>Machine Learning</p>
+        <p class="edu-inst">Sasi Institute of Technology & Engineering, Penugonda</p>
+        <div class="edu-bar-wrap">
+          <div class="edu-bar-label">
+            <span>Progress</span>
+            <span class="gradient-text">89%</span>
+          </div>
+          <div class="edu-bar"><div class="edu-fill"></div></div>
+        </div>
+      </div>
+
+      <!-- Goals card -->
+      <div class="glass-card bento-card bento-goal reveal">
+        <div class="goal-icon">🎯</div>
+        <h3>Career Goal</h3>
+        <p>
+          To become a full-stack engineer building products that scale — bridging powerful
+          backends with delightful frontends that impact millions.
+        </p>
+      </div>
+
+      <!-- Stats cards -->
+      @for (stat of stats; track stat.label; let i = $index) {
+        <div class="glass-card bento-card bento-stat reveal" [style.transition-delay.ms]="i * 80">
+          <div class="stat-emoji">{{ stat.icon }}</div>
+          <div class="stat-val gradient-text">{{ stat.value }}</div>
+          <div class="stat-lbl">{{ stat.label }}</div>
+          <div class="stat-glow"></div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

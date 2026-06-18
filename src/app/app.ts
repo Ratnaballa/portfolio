@@ -1,12 +1,41 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { AboutComponent } from './components/about/about.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { CertificationsComponent } from './components/certifications/certifications.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [
+    NavbarComponent,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    ProjectsComponent,
+    CertificationsComponent,
+    TimelineComponent,
+    ContactComponent,
+    FooterComponent
+  ],
+  template: `
+    <app-navbar />
+    <main>
+      <app-hero />
+      <app-about />
+      <app-skills />
+      <app-projects />
+      <app-certifications />
+      <app-timeline />
+      <app-contact />
+    </main>
+    <app-footer />
+  `,
+  styles: [`main { position: relative; z-index: 1; }`]
 })
-export class App {
-  protected readonly title = signal('ratna_portfolio');
-}
+export class App {}

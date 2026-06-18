@@ -1,0 +1,49 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="nav-container">
+    <div class="nav-inner">
+      <a class="logo" (click)="scrollTo('#home')">
+        <div class="logo-mark">RK</div>
+        <span class="logo-name">Ratna<span>.</span></span>
+      </a>
+
+      <ul class="nav-links" [class.open]="menuOpen()">
+        @for (link of navLinks; track link.href) {
+          <li>
+            <a (click)="scrollTo(link.href)"
+               [class.active]="activeSection() === link.href.slice(1)">
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" (click)="theme.toggle()" [attr.aria-label]="theme.isDark() ? 'Light mode' : 'Dark mode'">
+          @if (theme.isDark()) {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          } @else {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          }
+        </button>
+
+        <button class="hire-btn" (click)="scrollTo('#contact')">
+          <span class="dot"></span>
+          Open to Work
+        </button>
+
+        <button class="hamburger" [class.open]="menuOpen()" (click)="menuOpen.set(!menuOpen())" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+@if (menuOpen()) {
+  <div class="mobile-overlay" (click)="menuOpen.set(false)"></div>
+}
