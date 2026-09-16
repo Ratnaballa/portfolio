@@ -7,11 +7,14 @@
     gap: 24px;
     margin-top: 3rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1023.98px) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
     }
-    @media (max-width: 640px) {
+    @media (max-width: 767.98px) {
       grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 2rem;
     }
   }
 
@@ -26,6 +29,10 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 480px) {
+      padding: 1.25rem 1rem;
+    }
 
     &:hover {
       transform: translateY(-6px);

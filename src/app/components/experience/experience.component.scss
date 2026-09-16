@@ -160,14 +160,48 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767.98px) {
   .experience {
+    .experience-timeline {
+      margin-top: 2rem;
+      gap: 1.25rem;
+    }
     .exp-card {
       padding: 1.5rem;
     }
     .exp-header {
       flex-direction: column;
       align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .exp-meta {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    .exp-card {
+      padding: 1.25rem 1rem;
+    }
+    .company-badge-wrap {
+      gap: 0.75rem;
+    }
+    .company-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 1.4rem;
+    }
+    .company-name {
+      font-size: 1.15rem;
+    }
+    .exp-role {
+      font-size: 0.88rem;
+    }
+    .exp-bullets li {
+      font-size: 0.88rem;
     }
   }
 }

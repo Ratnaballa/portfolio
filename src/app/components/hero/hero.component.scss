@@ -110,9 +110,9 @@
 }
 
 .hero-name {
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: clamp(2.1rem, 7.5vw, 5.2rem);
   font-weight: 800;
-  line-height: 1.0;
+  line-height: 1.05;
   letter-spacing: -0.04em;
   margin-bottom: 20px;
   animation: fadeInUp 0.8s ease 0.3s both;
@@ -125,13 +125,13 @@
 .hero-role-wrap {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-bottom: 24px;
   animation: fadeInUp 0.8s ease 0.5s both;
 
   .role-prefix {
-    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    font-size: clamp(0.95rem, 2.5vw, 1.35rem);
     font-weight: 500;
     color: var(--text-secondary);
     font-family: var(--font-body);
@@ -140,17 +140,15 @@
   }
 
   .typing-text {
-    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.35rem);
     color: #d4bbff;
     font-weight: 700;
     font-family: 'Courier New', monospace;
     background: rgba(180,157,255,0.12);
     border: 1px solid rgba(180,157,255,0.3);
     border-radius: 8px;
-    padding: 4px 16px;
-    white-space: nowrap;
-    // Reserve enough space for the longest role so no layout shift
-    min-width: 310px;
+    padding: 4px 12px;
+    max-width: 100%;
     display: inline-block;
 
     .cursor {
@@ -162,20 +160,10 @@
   }
 }
 
-@media (max-width: 960px) {
-  .hero-role-wrap {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-
-    .typing-text { min-width: 0; width: auto; }
-  }
-}
-
 .hero-desc {
-  color: var(--text-secondary);   // now #b0bcd4 — clearly visible
-  font-size: 1.05rem;
-  line-height: 1.9;
+  color: var(--text-secondary);
+  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+  line-height: 1.85;
   max-width: 500px;
   margin-bottom: 36px;
   animation: fadeInUp 0.8s ease 0.7s both;
@@ -204,6 +192,7 @@
   align-items: center;
   gap: 7px;
   padding: 8px 16px;
+  min-height: 44px;
   border: 1px solid var(--border-color);
   border-radius: 50px;
   font-size: 0.82rem;
@@ -235,6 +224,7 @@
   position: relative;
   width: 320px;
   height: 320px;
+  max-width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -402,15 +392,15 @@
 }
 
 .hstat-val {
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
   font-weight: 800;
   font-family: var(--font-display);
   letter-spacing: -0.03em;
 }
 
 .hstat-label {
-  font-size: 0.7rem;
-  color: var(--text-secondary);  // brighter than muted
+  font-size: clamp(0.62rem, 2vw, 0.7rem);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -449,16 +439,23 @@
 }
 
 // ——— Responsive ———
-@media (max-width: 960px) {
+@media (max-width: 1023.98px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 50px;
-    padding: 30px 0 80px;
+    gap: 48px;
+    padding: 30px 0 60px;
     min-height: auto;
   }
 
-  .hero-desc { margin: 0 auto 36px; max-width: 540px; }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-role-wrap { justify-content: center; }
+  .hero-desc { margin: 0 auto 36px; max-width: 540px; text-align: center; }
   .hero-cta { justify-content: center; }
   .hero-social { justify-content: center; }
   .hero-visual { order: -1; }
@@ -469,8 +466,26 @@
   .hero-stats { max-width: 100%; }
 }
 
-@media (max-width: 560px) {
-  .hero-cta { flex-direction: column; align-items: center; }
-  .visual-card { width: 220px; height: 220px; }
-  .vc-avatar-inner span { font-size: 4rem; }
+@media (max-width: 767.98px) {
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 32px;
+    align-items: stretch;
+
+    .btn-primary, .btn-outline {
+      width: 100%;
+    }
+  }
+
+  .visual-card { width: 230px; height: 230px; }
+  .vc-ring-3 { display: none; }
+  .orbit-track { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding-top: 75px; }
+  .visual-card { width: 200px; height: 200px; }
+  .hstat { padding: 10px 6px; }
 }
