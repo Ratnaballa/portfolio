@@ -31,6 +31,9 @@
               <div class="project-meta">
                 <span class="project-number">0{{ i + 1 }}</span>
                 <span class="project-type">{{ proj.type }}</span>
+                @if (proj.isFeatured) {
+                  <span class="featured-badge font-semibold text-xs px-2 py-1 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">⭐ Featured</span>
+                }
               </div>
               <div class="project-actions">
                 <a [href]="proj.github" target="_blank" class="action-btn" aria-label="GitHub">

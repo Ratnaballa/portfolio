@@ -2,8 +2,13 @@ import { Component, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
 
-interface Skill { name: string; level: number; icon: string; }
-interface Category { label: string; icon: string; skills: Skill[]; }
+interface SkillCategory {
+  title: string;
+  icon: string;
+  skills: { name: string; icon: string }[];
+  color: string;
+  colorRgb: string;
+}
 
 @Component({
   selector: 'app-skills',
@@ -14,73 +19,84 @@ interface Category { label: string; icon: string; skills: Skill[]; }
 })
 export class SkillsComponent implements AfterViewInit {
   private scrollReveal = inject(ScrollRevealService);
-  active = 'Frontend';
 
-  categories: Category[] = [
+  categories: SkillCategory[] = [
     {
-      label: 'Frontend', icon: '🎨',
+      title: 'Frontend',
+      icon: '🎨',
+      color: '#a78bfa',
+      colorRgb: '167,139,250',
       skills: [
-        { name: 'HTML5', level: 80, icon: '🌐' },
-        { name: 'CSS3 / SCSS', level: 80, icon: '🎨' },
-        { name: 'JavaScript (ES6+)', level: 70, icon: '⚡' },
-        { name: 'Angular', level: 70, icon: '🅰️' },
-        { name: 'React', level: 70, icon: '⚛️' },
+        { name: 'Angular', icon: '🅰️' },
+        { name: 'React', icon: '⚛️' },
+        { name: 'TypeScript', icon: '🔷' },
+        { name: 'JavaScript', icon: '⚡' },
+        { name: 'HTML', icon: '🌐' },
+        { name: 'CSS', icon: '🎨' }
       ]
     },
     {
-      label: 'Backend', icon: '⚙️',
+      title: 'Backend',
+      icon: '⚙️',
+      color: '#22d3ee',
+      colorRgb: '34,211,238',
       skills: [
-        { name: 'Python', level: 70, icon: '🐍' },
-        { name: 'Firebase / Firestore', level: 40, icon: '🔥' },
-        { name: 'REST APIs', level: 65, icon: '🔗' },
+        { name: 'FastAPI', icon: '⚡' },
+        { name: 'Spring Boot', icon: '🌱' },
+        { name: 'REST APIs', icon: '🔗' }
       ]
     },
     {
-      label: 'Tools', icon: '🛠️',
+      title: 'Database',
+      icon: '🗄️',
+      color: '#f97316',
+      colorRgb: '249,115,22',
       skills: [
-        { name: 'Git & GitHub', level: 75, icon: '📦' },
-        { name: 'VS Code', level: 85, icon: '💻' },
-        { name: 'Angular CLI', level: 70, icon: '🔧' },
+        { name: 'MongoDB', icon: '🍃' },
+        { name: 'MySQL', icon: '🐬' },
+        { name: 'Firebase', icon: '🔥' }
       ]
     },
     {
-      label: 'Databases', icon: '🗄️',
+      title: 'AI & ML',
+      icon: '🤖',
+      color: '#c084fc',
+      colorRgb: '192,132,252',
       skills: [
-        { name: 'Firebase Firestore', level: 40, icon: '🔥' },
-        { name: 'SQL Basics', level: 60, icon: '📊' },
+        { name: 'AI', icon: '🤖' },
+        { name: 'Machine Learning', icon: '🧠' },
+        { name: 'Generative AI', icon: '✨' },
+        { name: 'RAG', icon: '🔍' },
+        { name: 'LangChain', icon: '🦜' },
+        { name: 'FAISS', icon: '⚡' },
+        { name: 'Vector Embeddings', icon: '📐' }
+      ]
+    },
+    {
+      title: 'Programming',
+      icon: '💻',
+      color: '#60a5fa',
+      colorRgb: '96,165,250',
+      skills: [
+        { name: 'Java', icon: '☕' },
+        { name: 'Python', icon: '🐍' },
+        { name: 'SQL', icon: '📊' }
+      ]
+    },
+    {
+      title: 'Core Concepts',
+      icon: '🧠',
+      color: '#34d399',
+      colorRgb: '52,211,153',
+      skills: [
+        { name: 'OOP', icon: '🧩' },
+        { name: 'DSA', icon: '🌳' },
+        { name: 'Problem Solving', icon: '💡' }
       ]
     }
   ];
 
-  alsoWith = [
-    { name: 'TypeScript', icon: '🔷' },
-    { name: 'Tailwind CSS', icon: '💨' },
-    { name: 'Bootstrap', icon: '🅱️' },
-    { name: 'Postman', icon: '📮' },
-    { name: 'Figma', icon: '🎭' },
-    { name: 'Canva', icon: '🖌️' },
-    { name: 'Netlify', icon: '🌐' },
-    { name: 'Vercel', icon: '▲' },
-  ];
-
-  get activeCategory() { return this.categories.find(c => c.label === this.active)!; }
-
-  setActive(label: string) {
-    this.active = label;
-    setTimeout(() => this.scrollReveal.observe(), 60);
+  ngAfterViewInit() {
+    this.scrollReveal.observe();
   }
-
-  getTier(level: number) {
-    if (level >= 78) return 'advanced';
-    if (level >= 60) return 'intermediate';
-    return 'beginner';
-  }
-
-  getTierLabel(level: number) {
-    if (level >= 78) return 'Advanced';
-    if (level >= 60) return 'Intermediate';
-    return 'Beginner';
-  }
-
-  ngAfterViewInit() { this.scrollReveal.observe(); }
 }

@@ -187,6 +187,53 @@ textarea { padding: 14px 16px; }
 
 .form-error { font-size: 0.75rem; color: #f87171; }
 
+.form-error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 12px;
+  color: #fca5a5;
+
+  .err-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .err-content {
+    flex: 1;
+  }
+
+  .err-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #f87171;
+    margin-bottom: 2px;
+  }
+
+  .err-msg {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #fca5a5;
+  }
+
+  .err-close {
+    background: transparent;
+    border: none;
+    color: #fca5a5;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+    opacity: 0.7;
+
+    &:hover { opacity: 1; }
+  }
+}
+
 .submit-btn {
   width: 100%;
   justify-content: center;

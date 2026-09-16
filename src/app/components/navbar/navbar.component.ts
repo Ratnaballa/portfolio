@@ -21,9 +21,9 @@ export class NavbarComponent {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
     { label: 'Certifications', href: '#certifications' },
-    { label: 'Journey', href: '#timeline' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -34,7 +34,7 @@ export class NavbarComponent {
   }
 
   detectActiveSection() {
-    const sections = ['home','about','skills','projects','certifications','timeline','contact'];
+    const sections = ['home','about','skills','experience','projects','certifications','contact'];
     for (const id of sections.slice().reverse()) {
       const el = document.getElementById(id);
       if (el && window.scrollY >= el.offsetTop - 120) {

@@ -21,6 +21,40 @@
   --accent: #a78bfa;
   --accent-rgb: 167,139,250;
 
+  &.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    border-color: rgba(var(--accent-rgb), 0.35);
+    background: linear-gradient(135deg, rgba(167,139,250,0.04) 0%, var(--bg-card) 100%);
+    box-shadow: 0 20px 50px -15px rgba(var(--accent-rgb), 0.2);
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+
+    .project-preview {
+      border-bottom: none;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 900px) {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    .preview-content {
+      flex: 1;
+      min-height: 220px;
+    }
+
+    .project-title {
+      font-size: 1.6rem;
+    }
+  }
+
   &::before {
     content: '';
     position: absolute;

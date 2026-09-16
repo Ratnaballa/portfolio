@@ -15,14 +15,16 @@ export class FooterComponent {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Certifications', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
   ];
 
   socials = [
-    { label: 'GitHub', href: 'https://github.com', icon: 'github' },
-    { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
-    { label: 'Email', href: 'mailto:ratnakumariballa@email.com', icon: 'email' },
+    { label: 'GitHub', href: 'https://github.com/Ratnaballa', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ratna-kumari-balla-6a36b52a0', icon: 'linkedin' },
+    { label: 'Email', href: 'mailto:kumarirathna370@gmail.com', icon: 'email' },
   ];
 
   scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }

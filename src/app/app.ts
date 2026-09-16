@@ -3,9 +3,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CertificationsComponent } from './components/certifications/certifications.component';
-import { TimelineComponent } from './components/timeline/timeline.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -17,9 +17,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HeroComponent,
     AboutComponent,
     SkillsComponent,
+    ExperienceComponent,
     ProjectsComponent,
     CertificationsComponent,
-    TimelineComponent,
     ContactComponent,
     FooterComponent
   ],
@@ -29,9 +29,9 @@ import { FooterComponent } from './components/footer/footer.component';
       <app-hero />
       <app-about />
       <app-skills />
+      <app-experience />
       <app-projects />
       <app-certifications />
-      <app-timeline />
       <app-contact />
     </main>
     <app-footer />

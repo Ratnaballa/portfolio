@@ -14,9 +14,9 @@ export class AboutComponent implements AfterViewInit {
 
   stats = [
     { value: '8.9', label: 'CGPA', icon: '🎓' },
-    { value: '3+', label: 'Projects Built', icon: '🚀' },
-    { value: '7+', label: 'Technologies', icon: '💡' },
-    { value: '8', label: 'Certifications', icon: '🏆' },
+    { value: '2', label: 'Internships', icon: '💼' },
+    { value: '3', label: 'Major Projects', icon: '🚀' },
+    { value: '500+', label: 'Problems Solved', icon: '🏆' },
   ];
 
   ngAfterViewInit() { this.scrollReveal.observe(); }

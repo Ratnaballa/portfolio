@@ -12,7 +12,7 @@ import { ScrollRevealService } from '../../services/scroll-reveal.service';
 export class HeroComponent implements OnInit, OnDestroy {
   private scrollReveal = inject(ScrollRevealService);
 
-  roles = ['Full Stack Developer', 'Angular Developer', 'AI & ML Enthusiast', 'Problem Solver'];
+  roles = ['Full Stack Developer', 'Angular Developer', 'AIML Student'];
   currentRole = '';
   roleIndex = 0;
   charIndex = 0;
@@ -21,9 +21,9 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   heroStats = [
     { value: '8.9', label: 'CGPA' },
-    { value: '3+', label: 'Projects' },
-    { value: '7+', label: 'Skills' },
-    { value: '8', label: 'Certs' },
+    { value: '2', label: 'Internships' },
+    { value: '3', label: 'Major Projects' },
+    { value: '500+', label: 'Problems Solved' },
   ];
 
   particles = Array.from({ length: 60 }, (_, i) => ({
